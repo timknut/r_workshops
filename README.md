@@ -47,7 +47,8 @@ https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html
 
 ### Videos
 If you like videos, I think this course is easy to understand and explained well. http://varianceexplained.org/RData/ 
-I you REALLY like videos, go for one of these full blown online courses: https://www.coursera.org/learn/r-programming 
+
+If you REALLY like videos, go for one of these full blown online courses: https://www.coursera.org/learn/r-programming 
 https://www.coursera.org/learn/data-cleaning and see related courses. 
 
 
