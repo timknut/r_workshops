@@ -24,6 +24,7 @@ eg:
 1. Jings rna-seq data is actually a very messy data set, and a good starting point. 
 2. Use the built in datasets i R:
 
+
 ```r
 if(!require(ggplot2)) install.packages("ggplot2")
 cars <- mtcars
@@ -50,5 +51,6 @@ If you like videos, I think this course is easy to understand and explained well
 
 If you REALLY like videos, go for one of these full blown online courses: https://www.coursera.org/learn/r-programming 
 https://www.coursera.org/learn/data-cleaning and see related courses. 
+
 
 
