@@ -5,7 +5,7 @@ date: "12.1.2016"
 output: html_document
 ---
 
-Repository for the CIGENE R workshops. 
+# Repository for the CIGENE R workshops. 
 
 We used to have a R-lovers club, so this is a great opportunity to revive it. 
 
