@@ -2,15 +2,20 @@
 title: "R workshops"
 author: "Tim Knutsen"
 date: "12.1.2016"
-output: 
-    html_document:
-        toc: true
+output: html_document
 ---
 
 # Repository for the CIGENE R workshops. 
-
-
 We used to have a R-lovers club, so this is a great opportunity to revive it. 
+
+# Table of Contents
+1. [dplyr example session Monday 25.01.16](#dplyr-example-session-Monday-25.01.16)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+
+## Example
+## Example2
+## Third Example
 
 ## dplyr example session Monday 25.01.16
 1. Download this repository to your computer
