@@ -2,12 +2,21 @@
 title: "R workshops"
 author: "Tim Knutsen"
 date: "12.1.2016"
-output: html_document
+output: 
+    html_document:
+        toc: true
 ---
 
 # Repository for the CIGENE R workshops. 
 
+
 We used to have a R-lovers club, so this is a great opportunity to revive it. 
+
+## dplyr example session Monday 25.01.16
+1. Download this repository to your computer
+2. Navigate to https://github.com/timknut/r_workshops/blob/master/dplyr_parsing.Rmd.
+
+
 
 ## Preparation
 To prepare for this, I suggest that you find yourself some data, and try to solve some problems.
@@ -20,9 +29,8 @@ eg:
 * summarize the data by eg. grouping by a column  and showing the mean for each group.
 * Plot your results using ggplot2. http://www.cookbook-r.com/Graphs/index.html 
 
-## Data:
-1. Jings rna-seq data is actually a very messy data set, and a good starting point. 
-2. Use the built in datasets i R:
+## Built in Datasets:
+* Use the built in datasets i R:
 
 
 ```r
@@ -51,6 +59,3 @@ If you like videos, I think this course is easy to understand and explained well
 
 If you REALLY like videos, go for one of these full blown online courses: https://www.coursera.org/learn/r-programming 
 https://www.coursera.org/learn/data-cleaning and see related courses. 
-
-
-
