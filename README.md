@@ -9,7 +9,7 @@ output: html_document
 We used to have a R-lovers club, so this is a great opportunity to revive it. 
 
 # Table of Contents
-1. [dplyr example session Monday 25.01.16](#dplyr-example-session-Monday-25.01.16)
+1. [dplyr example session Monday 25.01.16](#dplyr-example-session-monday-25.01.16)
 2. [Example2](#example2)
 3. [Third Example](#third-example)
 
@@ -17,7 +17,7 @@ We used to have a R-lovers club, so this is a great opportunity to revive it.
 ## Example2
 ## Third Example
 
-## dplyr example session Monday 25.01.16
+## dplyr example session Monday
 1. Download this repository to your computer
 2. Navigate to https://github.com/timknut/r_workshops/blob/master/dplyr_parsing.Rmd.
 
