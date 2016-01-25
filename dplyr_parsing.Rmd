@@ -47,6 +47,9 @@ head(felleskonto_subset)
 ## Add a month column
 felleskonto_subset <- mutate(felleskonto_subset, 
 									  Month = month(Date, label = TRUE))
+## Set In and Out to numeric.
+class(felleskonto_subset$In) <- "numeric"
+class(felleskonto_subset$Out) <- "numeric"
 ## Summarize expenes and incomes per month and gather them in one column
 in_out_summary <- felleskonto_subset %>% 
 	group_by(Month) %>% 
@@ -88,22 +91,26 @@ group_by(felleskonto_subset, Description) %>%
 Need to get rid of the date in the beginning.
 ```{r}
 felleskonto_subset$Description <- str_replace(felleskonto_subset$Description, "^[\\d]{2}.[\\d]{2}\\s", "")
-```
-
-
-```{r}
+## Try again
 felleskonto_subset %>%
 	filter(Text_code == "VARER") %>%
 	count(Description, sort = T)
 ```
-How much did I use?
+
+How much did I use? 
 ```{r}
 felleskonto_subset %>%
 	filter(Text_code == "VARER") %>%
-group_by(felleskonto_subset, Desription) %>%
-	summarize(Sum_out_varer = sum(Out, na.rm = TRUE))
-
+group_by(Description) %>%
+	summarize(Sum_out_varer = sum(-Out, na.rm = TRUE))
 ```
-
+Sort it by biggest sum
+```{r}
+felleskonto_subset %>%
+	filter(Text_code == "VARER") %>%
+group_by(Description) %>%
+	summarize(Sum_out_varer = sum(-Out, na.rm = TRUE)) %>% 
+	arrange(desc(Sum_out_varer))
+```
 
 
