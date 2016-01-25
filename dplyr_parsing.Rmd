@@ -1,0 +1,109 @@
+---
+title: "dplyr nettbank parsing"
+author: "Tim Knutsen"
+date: "22.1.2016"
+output: html_document
+---
+
+Here we will use dplyr and other packages to expolure Tim's financial expenses. 
+First we load the packages we need.
+All packages are developed by Hadley Wickham https://github.com/hadley
+
+![hadley](https://avatars3.githubusercontent.com/u/4196?v=3&s=400)
+
+```{r load pckgs}
+## if not installed, install and load.
+if(!require(lubridate)) install.packages("lubridate")
+if(!require(stringr)) install.packages("stringr")
+if(!require(tidyr)) install.packages("tidyr")
+if(!require(ggplot2)) install.packages("ggplot2")
+if(!suppressPackageStartupMessages(require(dplyr))) install.packages("dplyr")
+```
+
+Read the data with read.table. `fill = TRUE` will fill in blank spaces in the data were needed. Also make data frame into a dplyr data.fram which is easier to work with. 
+```{r}
+felleskonto <- read.delim(file = "dplyr_nettbank/gjensidige.txt",stringsAsFactors = FALSE, 
+								  fill = T, header = T, dec = ",", na.strings = "") %>%	tbl_df()
+## Have a look at the data
+head(felleskonto)
+## Will first select only the columns we need, and rename them to English while we are at it.
+felleskonto_subset  <- select(felleskonto, 
+										Date = Bokfort, 
+										Text_code = Tekstkode, 
+										Description = Beskrivelse, 
+										Out = Ut_av_konto, 
+										In = Inn_pa_konto)
+## Look again
+felleskonto_subset
+```
+A dplyr data_frame will only print first 10 rows if you print it, and also specify the type of data in each column.
+
+## The data
+This is my VISA card data from last year. To take advantage of the information, we need to format, extract and clean the it a bit.
+```{r, fig.width=12}
+## Reformat the date column to a date format.
+felleskonto_subset$Date <- lubridate::dmy(felleskonto_subset$Date)
+head(felleskonto_subset)
+## Add a month column
+felleskonto_subset <- mutate(felleskonto_subset, 
+									  Month = month(Date, label = TRUE))
+## Summarize expenes and incomes per month and gather them in one column
+in_out_summary <- felleskonto_subset %>% 
+	group_by(Month) %>% 
+	summarize(expences = sum(-Out, na.rm = T), 
+				 incomes = sum(In, na.rm = T)) %>%
+	gather(key = in_out, value = NOK, -Month)
+
+## Nice and tidy
+in_out_summary
+
+## Lets plot it per month!
+ggplot(in_out_summary, aes(Month, NOK, fill = in_out)) + 
+	geom_bar(stat="identity", position = position_dodge()) + 
+	theme(axis.text = element_text(size = 12, face = "bold")) + 
+	scale_fill_brewer(type = "qual", palette = "Set1")
+```
+
+## Grouping
+dplyr lets you summarize the data within groups in the data. Here, we sum yearly incomes and outcomes by grouping by `in_out`
+
+```{r}
+group_by(in_out_summary, in_out) %>%
+	summarize(sum = sum(NOK))
+```
+We are using more that we earn. :(
+
+dplyr also has a very convenient counting function.
+We use our card for buying stuff. 
+```{r}
+count(felleskonto_subset, Text_code, sort = TRUE)
+```
+But what unique description sums up to the highest expence over the year?
+
+```{r}
+group_by(felleskonto_subset, Description) %>%
+	filter(Text_code == "VARER") %>%
+	count(Description, sort = T)
+```	
+Need to get rid of the date in the beginning.
+```{r}
+felleskonto_subset$Description <- str_replace(felleskonto_subset$Description, "^[\\d]{2}.[\\d]{2}\\s", "")
+```
+
+
+```{r}
+felleskonto_subset %>%
+	filter(Text_code == "VARER") %>%
+	count(Description, sort = T)
+```
+How much did I use?
+```{r}
+felleskonto_subset %>%
+	filter(Text_code == "VARER") %>%
+group_by(felleskonto_subset, Desription) %>%
+	summarize(Sum_out_varer = sum(Out, na.rm = TRUE))
+
+```
+
+
+
