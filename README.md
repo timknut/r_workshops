@@ -14,14 +14,10 @@ We used to have a R-lovers club, so this is a great opportunity to revive it.
 3. [Built in Datasets](#built-in-datasets)
 4. [Learning](#learning)
 
-## Example
-## Example2
-## Third Example
-
 ## dplyr example session Monday
-1. Download this repository to your computer
+1. Download this repository to your computer by clicking the Download Zip buttun. Unzip, change working directory to the folder and yoy will have the data ready to copy and paste from the file below. 
 2. Navigate to https://github.com/timknut/r_workshops/blob/master/dplyr_parsing.Rmd.
-
+3. Alternativly you can open the `dplyr_parsing.Rmd`file directly and run the commands from that script.
 
 
 ## Preparation
