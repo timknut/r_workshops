@@ -10,8 +10,9 @@ We used to have a R-lovers club, so this is a great opportunity to revive it.
 
 # Table of Contents
 1. [dplyr example session Monday 25.01.16](#dplyr-example-session-monday)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
+2. [Preparation](#preparation)
+3. [Built in Datasets](#built-in-datasets)
+4. [Learning](#learning)
 
 ## Example
 ## Example2
