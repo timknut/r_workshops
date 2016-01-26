@@ -13,6 +13,7 @@ We used to have a R-lovers club, so this is a great opportunity to revive it.
 2. [Preparation](#preparation)
 3. [Built in Datasets](#built-in-datasets)
 4. [Learning](#learning)
+5. [Version control with git and github](#version-control-with-git-and-github)
 
 ## dplyr example session Monday
 1. Download this repository to your computer by clicking the Download Zip buttun. Unzip, change working directory to the folder and yoy will have the data ready to copy and paste from the file below. 
