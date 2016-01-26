@@ -51,6 +51,10 @@ ggplot2::ggplot(cars, aes(hp, mpg)) +
 There a many, many books and resources. It is easy to get lost. Find a good source, and stick to it. Also, google will solve almost everything. 
 For the basics, I really like http://www.statmethods.net/ . This has examples for doing 90 % of the most basic stuff you need to do.
 
+
+## Version control with git and github.
+If you are going to write a lot of code, I really, REALLY recommend reading about version control with git and how it can help you organize, backup, collaborate and share your code. [This article gives an overview.](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668) There are many other tutorials out there. Just google around if you feel for it. If you master git, you will be ahead of your teckno-conservative project leader.  
+
 ### Hadley
 For this workshop, we can go through how to do a rna-seq basic analysis using Hadley Wickams package dplyr which I find immensely useful. https://github.com/hadley/dplyr 
 He has created small intro tutorial using a built in dataset. 
