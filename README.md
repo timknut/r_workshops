@@ -9,7 +9,7 @@ output: html_document
 We used to have a R-lovers club, so this is a great opportunity to revive it. 
 
 # Table of Contents
-1. [dplyr example session Monday 25.01.16](#dplyr-example-session-monday)
+1. [dplyr example session Monday 01.02.16](#dplyr-example-session-monday)
 2. [Preparation](#preparation)
 3. [Built in Datasets](#built-in-datasets)
 4. [Learning](#learning)
@@ -19,6 +19,7 @@ We used to have a R-lovers club, so this is a great opportunity to revive it.
 1. Download this repository to your computer by clicking the Download Zip buttun. Unzip, change working directory to the folder and yoy will have the data ready to copy and paste from the file below. 
 2. Navigate to https://github.com/timknut/r_workshops/blob/master/dplyr_parsing.Rmd and run the commands. 
 3. Alternativly you can open the `dplyr_parsing.Rmd`file directly and run the commands from that script.
+4. Go through [salmon_res.R](https://github.com/timknut/r_workshops/blob/master/Salmon_quntification/salmon_res.R) which sows a simply analysis with dplyr and Bioconductor. 
 
 
 ## Preparation
