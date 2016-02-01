@@ -39,11 +39,5 @@ with_go_terms_s1 <- filter(df_full,Sample == "S1") %>%
 	arrange(desc(TPM)) %>%
 	inner_join(go) %>% filter(TPM > 500)
 
-## Write out the unique gene IDs and use geneontoloy.org 
+## Write out the unique gene IDs and use geneontoloy.org
 write(unique(with_go_terms_s1$gene_id))
-
-
-
-
-
-

@@ -19,7 +19,8 @@ We used to have a R-lovers club, so this is a great opportunity to revive it.
 1. Download this repository to your computer by clicking the Download Zip buttun. Unzip, change working directory to the folder and yoy will have the data ready to copy and paste from the file below. 
 2. Navigate to https://github.com/timknut/r_workshops/blob/master/dplyr_parsing.Rmd and run the commands. 
 3. Alternativly you can open the `dplyr_parsing.Rmd`file directly and run the commands from that script.
-4. Go through [salmon_res.R](https://github.com/timknut/r_workshops/blob/master/Salmon_quntification/salmon_res.R) which sows a simply analysis with dplyr and Bioconductor. 
+4. Go through [salmon_res.R](https://github.com/timknut/r_workshops/blob/master/Salmon_quntification/salmon_res.R) which shows a simply analysis with dplyr and Bioconductor.
+5. The two websites mentioned during the workshop for GO analysis: http://www.geneontology.org and http://revigo.irb.hr/ 
 
 
 ## Preparation

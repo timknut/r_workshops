@@ -46,7 +46,8 @@ felleskonto_subset$Date <- lubridate::dmy(felleskonto_subset$Date)
 head(felleskonto_subset)
 ## Add a month column
 felleskonto_subset <- mutate(felleskonto_subset, 
-									  Month = month(Date, label = TRUE))
+									  Month = month(Date, label = TRUE),
+									  new_date = Date + days(30))
 ## Set In and Out to numeric.
 class(felleskonto_subset$In) <- "numeric"
 class(felleskonto_subset$Out) <- "numeric"
